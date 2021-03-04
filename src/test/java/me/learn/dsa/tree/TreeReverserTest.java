@@ -1,8 +1,9 @@
 package me.learn.dsa.tree;
 
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.Is;
 import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 class TreeReverserTest {
 
@@ -14,7 +15,7 @@ class TreeReverserTest {
     TreeNode root = new TreeNode(4, right, left);
     TreeNode reversed = reverser.reverse(root);
 
-    MatcherAssert.assertThat(reversed, Is.is(new TreeNode(
+    assertThat(reversed, is(new TreeNode(
         4,
         new TreeNode(7,
             new TreeNode(9),
