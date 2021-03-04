@@ -1,2 +1,3 @@
-# dsa_practice
+# Datastructures and algorithms
 Learn Datastructures algorithm by coding
+
