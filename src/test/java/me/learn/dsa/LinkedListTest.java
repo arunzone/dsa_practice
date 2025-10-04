@@ -99,4 +99,29 @@ class LinkedListTest {
     assertThat(node, isEmpty());
   }
 
+  @Test
+  void shouldReturnEmptyStringForEmptyList() {
+    LinkedList linkedList = new LinkedList();
+
+    assertThat(linkedList.toString(), is(""));
+  }
+
+  @Test
+  void shouldReturnFormattedStringForSingleNode() {
+    LinkedList linkedList = new LinkedList();
+    linkedList.add(3);
+
+    assertThat(linkedList.toString(), is("[Head: 3]"));
+  }
+
+  @Test
+  void shouldReturnFormattedStringForMultipleNodes() {
+    LinkedList linkedList = new LinkedList();
+    linkedList.add(3);
+    linkedList.add(2);
+    linkedList.add(1);
+
+    assertThat(linkedList.toString(), is("[Head: 3] -> [2] -> [Tail: 1]"));
+  }
+
 }

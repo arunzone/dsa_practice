@@ -65,4 +65,31 @@ public class LinkedList {
     }while (current.next != null);
     return Optional.empty();
   }
+
+  @Override
+  public String toString() {
+    if (head == null) {
+      return "";
+    }
+
+    StringBuilder sb = new StringBuilder();
+    ListNode current = head;
+
+    // First node (Head)
+    sb.append("[Head: ").append(current.value).append("]");
+    current = current.next;
+
+    // Middle nodes
+    while (current != null && current != tail) {
+      sb.append(" -> [").append(current.value).append("]");
+      current = current.next;
+    }
+
+    // Last node (Tail) if different from head
+    if (tail != head && tail != null) {
+      sb.append(" -> [Tail: ").append(tail.value).append("]");
+    }
+
+    return sb.toString();
+  }
 }
