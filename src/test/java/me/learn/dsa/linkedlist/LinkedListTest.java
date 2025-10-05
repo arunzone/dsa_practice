@@ -1,4 +1,4 @@
-package me.learn.dsa;
+package me.learn.dsa.linkedlist;
 
 import static com.github.npathai.hamcrestopt.OptionalMatchers.isEmpty;
 import static com.github.npathai.hamcrestopt.OptionalMatchers.isPresentAndIs;

@@ -49,10 +49,6 @@ tasks.withType<Checkstyle> {
         xml.required.set(true)
         html.required.set(true)
     }
-//    exclude("src/main/java/me/learn/dsa/tree/TreeReverser.java")
-//    exclude("src/test/java/me/learn/dsa/tree/DepthTest.java")
-//    exclude("src/test/java/me/learn/dsa/tree/TreeMergerTest.java")
-
     // Only include LinkedList and ListNode files
     include("**/LinkedList.java", "**/LinkedListTest.java", "**/ListNode.java")
 }

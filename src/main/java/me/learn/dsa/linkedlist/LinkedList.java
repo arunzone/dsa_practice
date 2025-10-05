@@ -1,4 +1,4 @@
-package me.learn.dsa;
+package me.learn.dsa.linkedlist;
 
 import java.util.Optional;
 
@@ -100,49 +100,21 @@ public class LinkedList {
     return result;
   }
 
-  public void insert(final int value, final int index) {
-    final InsertPosition position = findInsertPosition(index);
-
+  private void insertInBetween(final int value, final int index) {
+    final NodePositionFinder.InsertPosition position =
+        NodePositionFinder.findInsertPosition(head, index);
     if (position.isValid()) {
       final ListNode newNode = new ListNode(value);
-      newNode.next = position.current;
-      position.previous.next = newNode;
+      newNode.next = position.current();
+      position.previous().next = newNode;
     }
   }
 
-  private InsertPosition findInsertPosition(final int targetIndex) {
-    ListNode current = head;
-    ListNode previous = null;
-    int currentIndex = 0;
-
-    while (current != null && currentIndex < targetIndex) {
-      previous = current;
-      current = current.next;
-      currentIndex++;
-    }
-
-    return new InsertPosition(current, previous, currentIndex, targetIndex);
-  }
-
-  private static class InsertPosition {
-    final ListNode current;
-    final ListNode previous;
-    final int reachedIndex;
-    final int targetIndex;
-
-    InsertPosition(
-        final ListNode current,
-        final ListNode previous,
-        final int reachedIndex,
-        final int targetIndex) {
-      this.current = current;
-      this.previous = previous;
-      this.reachedIndex = reachedIndex;
-      this.targetIndex = targetIndex;
-    }
-
-    boolean isValid() {
-      return reachedIndex == targetIndex && previous != null && current != null;
+  public void insert(final int value, final int index) {
+    if (index == 0) {
+      head = new ListNode(value, head);
+    } else {
+      insertInBetween(value, index);
     }
   }
 }

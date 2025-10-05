@@ -1,4 +1,4 @@
-package me.learn.dsa;
+package me.learn.dsa.linkedlist;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
