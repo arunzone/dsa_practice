@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Suppress AtLeastOneConstructor check for all test files -->
+    <suppress checks="AtLeastOneConstructor" files=".*Test\.java$"/>
+    <!-- Suppress MissingJavadocMethod for all files -->
+    <suppress checks="MissingJavadocMethod"/>
+</suppressions>

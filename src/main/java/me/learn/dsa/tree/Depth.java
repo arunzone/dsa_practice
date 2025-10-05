@@ -8,6 +8,5 @@ public class Depth {
     int leftDepth = maxDepth(treeNode.left);
     int rightDepth = maxDepth(treeNode.right);
     return Math.max(leftDepth, rightDepth) + 1;
-
   }
 }
